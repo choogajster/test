@@ -1,6 +1,0 @@
-D:\Wisp\WispTestProject\WispTestProject\obj\Debug\WispTestProject.csprojResolveAssemblyReference.cache
-D:\Wisp\WispTestProject\WispTestProject\bin\Debug\WispTestProject.dll
-D:\Wisp\WispTestProject\WispTestProject\bin\Debug\WispTestProject.pdb
-D:\Wisp\WispTestProject\WispTestProject\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.CrossBrowser.dll
-D:\Wisp\WispTestProject\WispTestProject\obj\Debug\WispTestProject.dll
-D:\Wisp\WispTestProject\WispTestProject\obj\Debug\WispTestProject.pdb
