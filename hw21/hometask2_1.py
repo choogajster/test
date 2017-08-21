@@ -23,16 +23,16 @@ def read_from_file():
     with open('cookbook.txt', encoding='UTF-8') as f:
         for i in f:
 
-            dishName = i.strip().lower()
-            ingredientsNum = int(f.readline())
+            dish_name = i.strip().lower()
+            ingredients_num = int(f.readline())
             lines = []
-            cook_book[dishName] = []
-            for l in range(ingredientsNum):
+            cook_book[dish_name] = []
+            for l in range(ingredients_num):
                 lines.append(f.readline().split("|"))
                 ing = {'ingridient_name': lines[l][0].strip(), 'quantity': int(lines[l][1].strip()),
                               'measure': lines[l][2].strip()}
 
-                cook_book[dishName].append(ing)
+                cook_book[dish_name].append(ing)
 
     with open("cookbook.json", encoding='UTF-8') as j:
         jcook = json.load(j)
