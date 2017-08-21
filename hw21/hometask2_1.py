@@ -1,3 +1,4 @@
+import json
 
 cook_book = {
       'яйчница': [
@@ -32,6 +33,10 @@ def read_from_file():
                               'measure': lines[l][2].strip()}
 
                 cook_book[dishName].append(ing)
+
+    with open("cookbook.json", encoding='UTF-8') as j:
+        jcook = json.load(j)
+        cook_book.update(jcook)
 
     return cook_book
 
