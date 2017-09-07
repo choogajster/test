@@ -3,6 +3,7 @@ import chardet
 
 # Вроде бы все закончил, спасибо!
 
+
 def read_from_file(filename):
     with open(filename,'rb') as f:
         data = f.read()
@@ -11,11 +12,11 @@ def read_from_file(filename):
     return json.loads(news)
 
 
-def get_all_words(dict):
+def get_all_words(my_dict):
     temp_list = []
     result = []
-    for i in range(len(dict['rss']['channel']['items'])):
-        temp_list.append(dict['rss']['channel']['items'][i]['description'])
+    for i in range(len(my_dict['rss']['channel']['items'])):
+        temp_list.append(my_dict['rss']['channel']['items'][i]['description'])
         tmp_result = temp_list[i].split(" ")
         result = result + tmp_result
     return result
