@@ -69,20 +69,31 @@ class YandexMetrika:
         response = requests.get(self.management_url, headers=headers)
         return response.json()['counters']
 
-    def get_counter_id(self):
-        headers = self.get_headers()
-        response = requests.get(self.management_url, headers=headers)
-        return response.json()['counter.id']
-
     def get_counter_visits(self, counter_id):
         params = {
             'id': counter_id,
             'metrics': 'ym:s:visits'
         }
         response = requests.get(stat_url, params, headers=headers)
-        return response.json()['data']
+        return response.json()
+
+    def get_counter_pageviews(self, counter_id):
+        params = {
+            'id': counter_id,
+            'metrics': 'ym:s:pageviews'
+        }
+        response = requests.get(stat_url, params, headers=headers)
+        return response.json()
+
+    def get_counter_users(self, counter_id):
+        params = {
+            'id': counter_id,
+            'metrics': 'ym:s:users'
+        }
+        response = requests.get(stat_url, params, headers=headers)
+        return response.json()
 
 metr = YandexMetrika(TOKEN)
 pprint(metr.get_counter_visits('46092072'))
-pprint(metr.get_counters())
-pprint(metr.get_counter_id())
+pprint(metr.get_counter_pageviews('46092072'))
+pprint(metr.get_counter_users('46092072'))
